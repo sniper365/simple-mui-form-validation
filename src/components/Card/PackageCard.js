@@ -20,7 +20,6 @@ export default function PackageCard({ pack, onSelected }) {
         title={pack.insurer_name}
         subheader={""}
         titleTypographyProps={{ align: "center" }}
-        // action={pack.insurer_name === "Pro" ? <StarIcon /> : null}
         subheaderTypographyProps={{
           align: "center",
         }}

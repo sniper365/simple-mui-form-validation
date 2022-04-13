@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Stack, Paper, Box } from "@mui/material";
 import PackageCard from "./components/Card/PackageCard";
 import PackageForm from "./components/Form/PackageForm";
@@ -10,7 +10,6 @@ function App() {
   const [selectedPack, setSelectedPack] = useState();
 
   const handleChange = (data) => {
-    console.log("cardchange", data);
     setSelectedPack(data)
     setIsshow(true)
   };
@@ -23,7 +22,6 @@ function App() {
   }
 
   const handleBack = (data) => {
-    console.log('callbackdata', data)
     setIsshow(false)
   }
 
