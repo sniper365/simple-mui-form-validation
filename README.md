@@ -7,5 +7,5 @@ yarn install
 yarn start
 
 ## Demo
-https://insurer.herokuapp.com
+https://insurerpackage.herokuapp.com/
 
