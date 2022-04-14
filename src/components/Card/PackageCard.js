@@ -9,6 +9,7 @@ export default function PackageCard({ pack, onSelected }) {
     <Card
       onClick={selected}
       sx={{
+        flex: 1,
         "&:hover": {
           background: "white",
           boxShadow: "5px 5px 30px 0px rgba(0, 0, 0, 0.2)",
@@ -28,6 +29,7 @@ export default function PackageCard({ pack, onSelected }) {
             theme.palette.mode === "light"
               ? theme.palette.grey[200]
               : theme.palette.grey[700],
+          height: '3rem',
         }}
       />
       <CardContent>
@@ -36,11 +38,11 @@ export default function PackageCard({ pack, onSelected }) {
             display: "flex",
             justifyContent: "center",
             alignItems: "baseline",
-            mb: 2,
+            mb: 6,
           }}
         >
-          <Typography component="h2" variant="h3" color="text.primary">
-            {pack.price}
+          <Typography component="h2" variant="h3" color="text.primary" sx={{mt:3}}>
+            ${pack.price}
           </Typography>
           <Typography variant="h6" color="text.secondary">
             /mo
