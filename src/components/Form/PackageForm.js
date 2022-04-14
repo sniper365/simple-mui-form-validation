@@ -7,7 +7,6 @@ import {
   MenuItem,
   Button,
   Stack,
-  CircularProgress,
 } from "@mui/material";
 import { useForm, Controller } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -47,22 +46,23 @@ export default function PackageForm({ callback, onBack, selectedPack }) {
   const onSubmit = async (data) => {
     let info = Object.assign(data, selectedPack);
     info = JSON.stringify(info, null, 2);
-    callback(info);
     setIsPending(true);
+    // www.example.com
     try {
-      let res = await fetch("https://www.example.com", {
+      let res = await fetch("https://httpbin.org/post", {
         method: "POST",
         body: info,
       });
       setIsPending(false);
       if (res.status === 200) {
-        alert("User created successfully");
+        alert(`User created successfully\n${info}`);
       } else {
         alert("Some error occured");
       }
     } catch (err) {
       console.log(err);
     }
+    callback()
   };
 
   const goBack = () => {
@@ -140,7 +140,7 @@ export default function PackageForm({ callback, onBack, selectedPack }) {
             color="primary"
             onClick={handleSubmit(onSubmit)}
           >
-            {isPending ? <CircularProgress /> : "Register"}
+            {isPending ? "Submitting..." : "Submit"}
           </Button>
           <Button variant="contained" color="secondary" onClick={goBack}>
             Back

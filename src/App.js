@@ -14,9 +14,8 @@ function App() {
     setIsShow(true);
   };
 
-  const handleCallback = (data) => {
+  const handleCallback = () => {
     setIsShow(false);
-    alert(data);
   };
 
   const handleBack = () => {
